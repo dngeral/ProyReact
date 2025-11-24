@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { Login, Register } from "./Componentes/Forms";
 
 function App() {
+  const [visibleLogin, setVisibleLogin] = useState(false);
+  const [visibleRegister, setVisibleRegister] = useState(false);
+
+  const abrirLogin = () => {
+    setVisibleLogin(true);
+    setVisibleRegister(false); // aseguramos que se cierre el registro
+  };
+
+  const abrirRegister = () => {
+    setVisibleRegister(true);
+    setVisibleLogin(false); // aseguramos que se cierre el login
+  };
+
+  const cerrarLogin = () => setVisibleLogin(false);
+  const cerrarRegister = () => setVisibleRegister(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <button onClick={ mostrarF }>Iniciar sesion</button>   */}
+      <button onClick={abrirLogin}>Abrir Login</button>
+      <button onClick={abrirRegister}>Abrir Registro</button>
+
+      <Login
+        visible={visibleLogin}
+        cerrarModal={cerrarLogin}
+        abrirRegister={abrirRegister}
+      />
+      <Register
+        visible={visibleRegister}
+        cerrarModal={cerrarRegister}
+        abrirLogin={abrirLogin}
+      />
     </div>
   );
 }
