@@ -1,41 +1,19 @@
 import "./App.css";
+import { BrowserRouter, Route, Routes} from "react-router-dom"
 import { useState } from "react";
+
+/* imports */
+import Inicio from "./Componentes/Home"
 import { Login, Register } from "./Componentes/Forms";
 
 function App() {
-  const [visibleLogin, setVisibleLogin] = useState(false);
-  const [visibleRegister, setVisibleRegister] = useState(false);
-
-  const abrirLogin = () => {
-    setVisibleLogin(true);
-    setVisibleRegister(false); // aseguramos que se cierre el registro
-  };
-
-  const abrirRegister = () => {
-    setVisibleRegister(true);
-    setVisibleLogin(false); // aseguramos que se cierre el login
-  };
-
-  const cerrarLogin = () => setVisibleLogin(false);
-  const cerrarRegister = () => setVisibleRegister(false);
-
   return (
-    <div className="App">
-      {/* <button onClick={ mostrarF }>Iniciar sesion</button>   */}
-      <button onClick={abrirLogin}>Abrir Login</button>
-      <button onClick={abrirRegister}>Abrir Registro</button>
-
-      <Login
-        visible={visibleLogin}
-        cerrarModal={cerrarLogin}
-        abrirRegister={abrirRegister}
-      />
-      <Register
-        visible={visibleRegister}
-        cerrarModal={cerrarRegister}
-        abrirLogin={abrirLogin}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Inicio/>}/>
+        <Route path="/log" element={<Login/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

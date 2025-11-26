@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-export const Login = () => {
+const Login = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
@@ -71,3 +70,5 @@ export const Login = () => {
     </div>
   )
 }
+
+export default Login;
