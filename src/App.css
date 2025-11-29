@@ -9,6 +9,22 @@
   --titulos: font-family: "Roboto Mono", bold;
   --fuente: font-family: "Roboto Mono", monospace;
 }
+
+/* estilos globales */
+.btn{
+  width: 315px;
+  height: 50px;
+  line-height: 40px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: var(--celeste);
+  border: 4px solid var(--plomo);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* fin estilos globales */
+
 .App {
   display: flex;
   flex-direction: column;
@@ -137,3 +153,46 @@ form .icons i{
   }
 }
 /* Fin forularios */
+
+/* Iniciar Sesion */
+.IniciarSesion .cabeza{
+  background-color: var(--morado);
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.IniciarSesion .cuerpo{
+  background-color: var(--morado);
+  width: 100%;
+  height: 150px;
+  border-radius: 30% 30% 0 0;
+}
+
+.IniciarSesion .figura{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.IniciarSesion .entradas{
+  position: absolute;
+  bottom: 100px;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entradas .btn {
+  width: 60%;
+  height: 40px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;     /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+}
