@@ -1,27 +1,29 @@
-
+import {Link} from "react-router-dom";
 export default function IniciarSesion() {
-  return (<>
+  return (
+  <div className="Log">
     <div className="IniciarSesion">
-      <p>Bienvenid@ a</p>
-      <div>
+      <div className="titulos">
+        <p>Bienvenid@ a</p>
         <h1>ArtEgo</h1>
-        <p>Crea y comparte</p>
+        <span>Crea y comparte</span>
       </div>
       <div>
-        <div>
+        <div className="imagen">
           {/* imagen */}
+        </div>
+        
+        <div className="entradas">
+          <button className="btn">Iniciar Sesion</button>
+          <a>No tienes cuenta? <Link to="/reg" className="enlace">Crear mi Cuenta</Link></a>
         </div>
         <div className="figura">
           <div className="cabeza">{/* circulo */}</div>
           <div className="cuerpo">{/* cuerpo */}</div>
         </div>
-        <div className="entradas">
-          <button className="btn">Iniciar Sesion</button>
-          <a>No tienes cuenta? Crear mi Cuenta</a>
-        </div>
 
       </div>
     </div>
-  </>
+  </div>
   );
 }

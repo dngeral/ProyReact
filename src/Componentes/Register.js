@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
-export const Register = () => {
+ const Registro = () => {
   return (
-    <div>
+    <div className='formularios'>
       <form>
         <h2>Registro</h2>
         
@@ -26,9 +27,10 @@ export const Register = () => {
         </div>
 
         {/* <input className='btn btnCrear' value="Crear mi cuenta" type='submit' ></input> */}
-        <button className='btn btnCrear'>Crear mi cuenta</button>
-        <span>Ya tienes cuenta? <a>Inicia sesion</a></span>
+        <Link to="/log" className='btn '>Crear mi cuenta</Link>
+        <span>Ya tienes cuenta?  <Link to="/log" className='enlace '>Inicia sesion</Link></span>
       </form>
     </div>
   )
 }
+export default Registro;

@@ -6,6 +6,8 @@ import { useState } from "react";
 import Inicio from "./Componentes/Home";
 /* import { Login, Register } from "./Componentes/Forms"; */
 import IniciarSesion from "./Componentes/IniciarSesion"
+import Registro from "./Componentes/Register"
+import Login from "./Componentes/Login"
 
 /* Todos tus enlaces deberan trabajarse en el archivo "Home.js" */
 /* Aqui solo coloca los imports y los routes */
@@ -14,7 +16,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/log" element={<IniciarSesion />} />
+        <Route path="/iniciar" element={<IniciarSesion />} />
+        <Route path="/reg" element={<Registro />} />
+        <Route path="/log" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
