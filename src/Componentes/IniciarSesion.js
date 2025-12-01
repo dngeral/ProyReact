@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+/* import Home from "./Home" */
 export default function IniciarSesion() {
   return (
   <div className="Log">
@@ -14,7 +15,8 @@ export default function IniciarSesion() {
         </div>
         
         <div className="entradas">
-          <button className="btn">Iniciar Sesion</button>
+          <Link to="/home" className="btn">Iniciar Sesion</Link>
+          {/* <button onClick={<Home/>}>Iniciar</button> */}
           <a>No tienes cuenta? <Link to="/reg" className="enlace">Crear mi Cuenta</Link></a>
         </div>
         <div className="figura">

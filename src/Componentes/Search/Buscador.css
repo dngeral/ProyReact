@@ -1,0 +1,22 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--aqua);
+
+  border-radius: 16px;
+  padding: 8px 10px;
+}
+.searchbar i {
+  color: var(--dark-purple);
+}
+.searchbar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--dark-purple);
+}
+.searchbar .btn {
+  white-space: nowrap;
+}

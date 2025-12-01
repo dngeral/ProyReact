@@ -1,0 +1,81 @@
+.back {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+}
+.thread {
+  margin-top: 12px;
+}
+.title {
+  font-weight: 800;
+  display: flex;
+}
+.rating {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--accent);
+}
+.author {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+.Foro {
+  display: flex;
+}
+.grid-publicaciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Cada publicación ocupa un tercio del ancho en escritorio */
+.publicacion {
+  flex: 1 1 calc(33.333% - 24px);
+  background: var(--mint);
+
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+
+/* Imagen dentro de publicación */
+.publicacion img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Responsive para móvil */
+@media screen and (max-width: 768px) {
+  .publicacion {
+    flex: 1 1 100%;
+  }
+}
+.btn-comentar {
+  background: var(--accent-2); /* verde menta */
+  color: var(--dark-purple);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-comentar:hover {
+  background: var(--accent); /* burdeos al pasar el mouse */
+  color: white;
+  transform: scale(1.05);
+}

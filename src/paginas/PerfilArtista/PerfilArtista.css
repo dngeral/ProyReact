@@ -1,0 +1,47 @@
+.back {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+}
+.head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--mint);
+  border: 2px solid var(--dark-purple);
+}
+.names .name {
+  font-weight: 800;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.inner {
+  height: 100px;
+  background: var(--aqua);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.tile {
+  height: 90px;
+  background: var(--mint);
+  border: 2px solid var(--dark-purple);
+  border-radius: 10px;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

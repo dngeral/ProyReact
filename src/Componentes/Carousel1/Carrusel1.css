@@ -1,0 +1,47 @@
+.carousel1 {
+  position: relative;
+  overflow: hidden;
+}
+.carousel1 img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.carousel1 .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent);
+  color: var(--offwhite);
+  border: none;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.carousel1 .nav.left {
+  left: 10px;
+}
+.carousel1 .nav.right {
+  right: 10px;
+}
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+}
+.dot.active {
+  background: var(--accent);
+}

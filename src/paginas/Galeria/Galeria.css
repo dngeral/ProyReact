@@ -1,0 +1,78 @@
+.nombre-cuenta {
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--dark-purple);
+  font-size: 16px;
+}
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.categorias span {
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+}
+
+.categorias .activo {
+  border-color: var(--accent);
+}
+
+.componente-activo {
+  margin-top: 20px;
+}
+.encabezado-galeria {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.btn-volver {
+  background: var(--accent); /* burdeos */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.btn-volver:hover {
+  transform: scale(1.05);
+}
+
+.nombre-cuenta {
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+  color: var(--accent);
+}

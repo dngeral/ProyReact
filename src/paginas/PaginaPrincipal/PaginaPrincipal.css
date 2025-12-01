@@ -1,0 +1,28 @@
+.home .scroll-bar-up {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.scroll-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mint);
+  color: var(--dark-purple);
+  text-decoration: none;
+  border: 2px solid var(--dark-purple);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+.link {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: center;
+  font-weight: 550;
+}
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
