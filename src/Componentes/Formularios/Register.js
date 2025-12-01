@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
  const Registro = () => {
   return (
     <div className='formularios'>
-      <form>
+      <form className='formg'>
         <h2>Registro</h2>
         
         <div>
@@ -27,8 +27,8 @@ import {Link} from "react-router-dom";
         </div>
 
         {/* <input className='btn btnCrear' value="Crear mi cuenta" type='submit' ></input> */}
-        <Link to="/log" className='btn '>Crear mi cuenta</Link>
-        <span>Ya tienes cuenta?  <Link to="/log" className='enlace '>Inicia sesion</Link></span>
+        <Link to="/p" className='btng '>Crear mi cuenta</Link>
+        <span>Ya tienes cuenta?  <Link to="/login" className='enlace '>Inicia sesion</Link></span>
       </form>
     </div>
   )

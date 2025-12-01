@@ -10,7 +10,7 @@ const Login = () => {
     <div className='formularios'>
 
 
-      <form>
+      <form className='formg'>
         <h2>Iniciar Sesion</h2>
         <div>
           <label>Usuario</label>
@@ -21,8 +21,8 @@ const Login = () => {
           <label>Contrasena</label>
           <input type='password' className='txtinput' placeholder='Ingrese contrasena'></input>
         </div>
-        <Link to="/log" className='btn '>Iniciar</Link>
-        <span>Ya tienes cuenta?  <Link to="/reg" className='enlace '>Crear cuenta</Link></span>
+        <Link to="/p" className='btng '>Iniciar</Link>
+        <span>Ya tienes cuenta?  <Link to="/registro" className='enlace '>Crear cuenta</Link></span>
         
         <div className='optional-icons'>
           <label>Iniciar con:</label>

@@ -1,7 +1,7 @@
-import { Routes, Route, Link, useLocation } from "react-router-dom";
-import IniciarSesion from "./Componentes/IniciarSesion";
-import Registro from "./Componentes/Register";
-import Login from "./Componentes/Login";
+import { Routes, Route, Outlet, Link, useLocation } from "react-router-dom";
+import IniciarSesion from "./Componentes/Formularios/IniciarSesion";
+import Registro from "./Componentes/Formularios/Register";
+import Login from "./Componentes/Formularios/Login";
 import PaginaPrincipal from "./paginas/PaginaPrincipal/PaginaPrincipal";
 import Pagina from "./paginas/Pagina/Pagina";
 import Galeria from "./paginas/Galeria/Galeria";
@@ -14,60 +14,58 @@ import PerfilArtista from "./paginas/PerfilArtista/PerfilArtista";
 import Footer from "./Componentes/Navegacion/Footer";
 import "./Componentes/Navegacion/Footer.css";
 
-function App() {
+function LayoutPrincipal() {
   const location = useLocation();
-
-  // Rutas donde NO quieres mostrar header/footer
-  const hideLayout = ["/login", "/registro", "/iniciar-sesion"].includes(location.pathname);
-
   return (
     <div className="app">
-      {!hideLayout && (
-        <header className="topbar">
-          <Link to="/" className="brand">ArtEgo</Link>
-          <nav className="topnav">
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-              <i className="fa-solid fa-house"></i>
-            </Link>
-            <Link to="/galeria" className={location.pathname.startsWith("/galeria") ? "active" : ""}>
-              <i className="fa-solid fa-images"></i>
-            </Link>
-            <Link to="/foro" className={location.pathname === "/foro" ? "active" : ""}>
-              <i className="fa-solid fa-comments"></i>
-            </Link>
-            <Link to="/mi-perfil" className={location.pathname === "/mi-perfil" ? "active" : ""}>
-              <i className="fa-solid fa-user"></i>
-            </Link>
-          </nav>
-        </header>
-      )}
-
+      <header className="topbar">
+        <Link to="/p" className="brand">ArtEgo</Link>
+        <nav className="topnav">
+          <Link to="/p" className={location.pathname === "/p" ? "active" : ""}>
+            <i className="fa-solid fa-house"></i>
+          </Link>
+          <Link to="/galeria" className={location.pathname.startsWith("/galeria") ? "active" : ""}>
+            <i className="fa-solid fa-images"></i>
+          </Link>
+          <Link to="/foro" className={location.pathname === "/foro" ? "active" : ""}>
+            <i className="fa-solid fa-comments"></i>
+          </Link>
+          <Link to="/mi-perfil" className={location.pathname === "/mi-perfil" ? "active" : ""}>
+            <i className="fa-solid fa-user"></i>
+          </Link>
+        </nav>
+      </header>
       <main className="main">
-        <Routes>
-          {/* Login / Registro */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<IniciarSesion />} />
-          <Route path="/registro" element={<Registro />} />
-
-          {/* Páginas principales */}
-          <Route path="/principal" element={<PaginaPrincipal />} />
-          <Route path="/pagina" element={<Pagina />} />
-          <Route path="/galeria" element={<Galeria />} />
-          <Route path="/galeria/estilo" element={<Estilo />} />
-          <Route path="/galeria/medio" element={<Medio />} />
-          <Route path="/galeria/tema" element={<Tema />} />
-          <Route path="/mi-perfil" element={<MiPerfil />} />
-          <Route path="/foro" element={<Foro />} />
-          <Route path="/perfil-artista" element={<PerfilArtista />} />
-        </Routes>
+        <Outlet /> {/* Aquí se renderizan las rutas hijas */}
       </main>
-
-      {!hideLayout && (
-        <footer className="footer">
-          <Footer />
-        </footer>
-      )}
+      <footer className="footer">
+        <Footer />
+      </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      {/* Rutas de autenticación SIN header/footer */}
+      <Route path="/" element={<IniciarSesion />} />
+      <Route path="/registro" element={<Registro />} />
+      <Route path="/login" element={<Login />} />
+
+      {/* Rutas principales CON header/footer */}
+      <Route element={<LayoutPrincipal />}>
+        <Route path="/p" element={<PaginaPrincipal />} />
+        <Route path="/pagina" element={<Pagina />} />
+        <Route path="/galeria" element={<Galeria />} />
+        <Route path="/galeria/estilo" element={<Estilo />} />
+        <Route path="/galeria/medio" element={<Medio />} />
+        <Route path="/galeria/tema" element={<Tema />} />
+        <Route path="/mi-perfil" element={<MiPerfil />} />
+        <Route path="/foro" element={<Foro />} />
+        <Route path="/perfil-artista" element={<PerfilArtista />} />
+      </Route>
+    </Routes>
   );
 }
 
